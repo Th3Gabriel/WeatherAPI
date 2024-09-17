@@ -39,7 +39,7 @@ function localizar() {
             switch(condition){
 
                 case "Sunny":
-                    weatherIcon.src = "css/sun.png"
+                    weatherIcon.src = "css/sun.svg"
                     break;
                     
             }
