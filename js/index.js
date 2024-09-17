@@ -11,6 +11,7 @@ function localizar() {
     .then(data => {
         console.log('Weather Data:', data);
         if (data.location) {
+            console.log(data)
             country = data.location.country;
             lat = data.location.lat;
             lon = data.location.lon;
@@ -32,6 +33,16 @@ function localizar() {
             resultTemp.textContent = `latitude:  ${lat}`
             resultLat.textContent = `longitude:  ${lon}`
             resultCondicao.textContent = `Condição: ${condition}`
+
+            const weatherIcon = document.getElementById("condicao");
+
+            switch(condition){
+
+                case "Sunny":
+                    weatherIcon.src = "css/sun.png"
+                    break;
+                    
+            }
 
         } else {
             console.log('Localização não encontrada.');

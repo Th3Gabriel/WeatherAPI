@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #272626;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,11 +27,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+#forms {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 40px;
+}
+
 input[type="text"] {
-    width: calc(100% - 20px);
+    flex: 1;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid gray; /* Roxo médio */
+    border: 1px solid gray;
     border-radius: 5px;
     font-size: 1rem;
 }
@@ -45,10 +51,16 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 button:hover {
     background-color: #7B2CBF; /* Sombra ao passar o mouse */
+}
+
+#condicao {
+    width: 100px;
+    margin-bottom: 15px;
 }
 
 .result-grid {
