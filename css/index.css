@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #272626;
+    background-color: #1C1C1C; /* Cinza escuro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,85 +14,122 @@ body {
 }
 
 main {
-    background-color: #fff;
-    width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #2F2F2F; /* Cinza médio */
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     text-align: center;
+    position: relative;
 }
 
 h1 {
-    color: #5A189A; /* Roxo escuro */
-    margin-bottom: 20px;
+    color: #FFD700; /* Dourado */
+    margin-bottom: 25px;
+    font-size: 2rem;
 }
 
 #forms {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    margin-bottom: 40px;
+    position: relative; /* Necessário para o posicionamento absoluto da lista de sugestões */
 }
 
 input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 5px;
+    padding: 12px;
+    border: 2px solid #D4AF37; /* Dourado metálico */
+    border-radius: 8px;
     font-size: 1rem;
+    background-color: #333; /* Cinza escuro */
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #FFD700; /* Dourado */
+    outline: none;
 }
 
 button {
-    background-color: #9D4EDD; /* Roxo principal */
+    background-color: #B8860B; /* Dourado escuro */
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 18px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #7B2CBF; /* Sombra ao passar o mouse */
+    background-color: #DAA520; /* Dourado claro */
+    transform: scale(1.05);
 }
 
 #condicao {
-    width: 100px;
-    margin-bottom: 15px;
-    transform: scale(1);
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-	0% {
-		transform: scale(0.95);
-	}
-
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-	}
-
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+    width: 80px; /* Ajustado para centralizar melhor */
+    margin: 15px 0;
 }
 
-
-.result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px;
-    margin-top: 20px;
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
-p {
-    color: #5A189A; /* Roxo escuro */
+.result-top{
+    margin-top: 25px;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.result-top, .result-bottom, .result-coordinates {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.result-top p, .result-bottom p, .result-coordinates p {
+    color: #FFD700; /* Dourado */
     font-size: 1rem;
     margin: 0;
     padding: 10px;
-    border-radius: 10px;
+    background-color: #333; /* Cinza escuro */
+    border-radius: 8px;
+}
+
+.result-icon {
+    margin: 10px 0;
+}
+
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #D4AF37; /* Dourado metálico */
+    background-color: #333; /* Cinza escuro */
+    color: #fff;
+    width: calc(100% - 24px); /* Ajusta a largura para ficar alinhada com o campo de input */
+    border-radius: 8px;
+    position: absolute; /* Posiciona a lista de forma absoluta em relação ao #forms */
+    top: 100%; /* Alinha a lista diretamente abaixo do input */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Corrige o alinhamento */
+    z-index: 10; /* Garante que a lista fique acima de outros elementos */
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #D4AF37; /* Dourado metálico */
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.suggestions-list li:hover {
+    background-color: #D4AF37; /* Dourado metálico */
 }

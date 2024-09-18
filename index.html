@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather API</title>
+    <title>Weather API Autocomplete</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
     <main>
-        <h1>Weather API</h1>
+        <h1>Condições Climáticas com WeatherAPI</h1>
         <br>
         <div id="forms">
-            <input type="text" id="inp_localização" placeholder="Weather API">
-            <button type="submit" id="btn_localizar">Localizar</button>
+            <input type="text" id="inp_localizacao" placeholder="Digite o nome da cidade" autocomplete="off">
+            <ul id="suggestions" class="suggestions-list"></ul> <!-- Lista para sugestões -->
         </div>
 
+        <div class="result-container">
+            <div class="result-top">
+                <p id="result_nome"></p>
+            </div>
 
-        <img src="" alt="" id="condicao">
+            <div class="result-icon">
+                <img src="" alt="" id="condicao">
+            </div>
 
-        <div class="result-grid">
-            <p id="result_nome"></p>
-            <p id="result_pais"></p>
-            <p id="result_temp"></p>
-            <p id="result_lat"></p>
-            <p id="result_lon"></p>
-            <p id="result_condicao"></p>
+            <div class="result-bottom">
+                <p id="result_temp"></p>
+                <p id="result_condicao"></p>
+            </div>
+
+            <div class="result-coordinates">
+                <p id="result_lon"></p>
+                <p id="result_lat"></p>
+            </div>
         </div>
     </main>
     
